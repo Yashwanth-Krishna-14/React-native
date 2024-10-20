@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         paddingTop: 10,
+        paddingBottom:10,
     },
     messageContainer: {
         marginVertical: 5,
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
     },
     messageText: {
-        fontSize: 16,
+        fontSize: 20,
     },
     timestamp: {
         fontSize: 12,
@@ -138,8 +139,8 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
     image: {
-        width: 200,
-        height: 200,
+        width: 300,
+        height: 300,
         borderRadius: 10,
         marginTop: 5,
     },

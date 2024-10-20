@@ -1,15 +1,21 @@
+// App.js or wherever your navigation is set up
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native'; // If you are using React Navigation
-import HomeScreen from './HomeScreen'; // Import your screens
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import HomeScreen from './HomeScreen';
+import ChatScreen from './ChatScreen';
+import NewChatScreen from './NewChatScreen';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
     return (
-        <SafeAreaProvider>
-            <NavigationContainer>
-                <HomeScreen />
-                {/* Add other screens or components here */}
-            </NavigationContainer>
-        </SafeAreaProvider>
+        <NavigationContainer>
+            <Drawer.Navigator initialRouteName="Home">
+                <Drawer.Screen name="Home" component={HomeScreen} />
+                <Drawer.Screen name="Chat" component={ChatScreen} />
+                <Drawer.Screen name="NewChat" component={NewChatScreen} />
+            </Drawer.Navigator>
+        </NavigationContainer>
     );
 }
