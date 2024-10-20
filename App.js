@@ -1,10 +1,10 @@
 // App.js or wherever your navigation is set up
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import HomeScreen from './HomeScreen';
-import ChatScreen from './ChatScreen';
-import NewChatScreen from './NewChatScreen';
+ import { createDrawerNavigator } from '@react-navigation/drawer'; 
+import HomeScreen from './screens/HomeScreen';
+import ChatScreen from './screens/ChatScreen';
+import NewChatScreen from './screens/newChatScreen';
 
 const Drawer = createDrawerNavigator();
 

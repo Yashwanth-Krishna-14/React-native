@@ -4,6 +4,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import io from 'socket.io-client';
 
+
 const ChatScreen = ({ route }) => {
     const { userName } = route.params;
     const [messages, setMessages] = useState([]);
@@ -27,6 +28,9 @@ const ChatScreen = ({ route }) => {
         };
     }, []);
 
+
+
+    
     const sendMessage = () => {
         if (messageText.trim()) {
             const newMessage = {
@@ -73,6 +77,9 @@ const ChatScreen = ({ route }) => {
             )}
         </SafeAreaView>
     );
+
+
+    
 
     return (
         <KeyboardAvoidingView 
@@ -148,8 +155,9 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         paddingHorizontal :10 ,
-        paddingBottom :20 , // Add padding to create space between the keyboard and input box
-        marginBottom :30 , // Add margin to elevate the input box from bottom
+        paddingBottom :10 , // Add padding to create space between the keyboard and input box
+        marginBottom :10 , // Add margin to elevate the input box from bottom
+        paddingTop:100,
     },
     input:{
        flex :1 ,
@@ -157,10 +165,11 @@ const styles = StyleSheet.create({
        borderRadius :30 ,
        backgroundColor:'#f0f0f0' ,
        paddingHorizontal :20 ,
-       marginRight :10 // Add margin to create space between input and buttons
+       marginRight :10, // Add margin to create space between input and buttons
+       marginLeft:10,
    },
    iconButton:{
-       marginLeft :10 , // Add margin to create space between buttons
+       marginLeft :8 , // Add margin to create space between buttons
    }
 });
 
