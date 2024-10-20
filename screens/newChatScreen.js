@@ -1,6 +1,6 @@
-// NewChatScreen.js
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const NewChatScreen = ({ navigation }) => {
     const [recipient, setRecipient] = useState('');
@@ -13,6 +13,7 @@ const NewChatScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+            <Text style={styles.header}>New Chat</Text>
             <TextInput
                 style={styles.input}
                 placeholder="Recipient Name"
@@ -25,7 +26,9 @@ const NewChatScreen = ({ navigation }) => {
                 value={message}
                 onChangeText={setMessage}
             />
-            <Button title="Start Chat" onPress={startChat} />
+            <TouchableOpacity style={styles.button} onPress={startChat}>
+                <Text style={styles.buttonText}>Start Chat</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -35,13 +38,34 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 16,
         justifyContent: 'center',
+        backgroundColor: '#f9f9f9', // Light background color
+    },
+    header: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#007AFF', // Primary blue color
+        marginBottom: 20,
+        textAlign: 'center',
     },
     input: {
-        height: 40,
-        borderColor: '#ccc',
+        height: 50,
+        borderColor: '#007AFF', // Blue border for inputs
         borderWidth: 1,
+        borderRadius: 30,
         marginBottom: 12,
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
+        backgroundColor: '#fff', // White background for inputs
+    },
+    button: {
+        backgroundColor: '#007AFF', // Blue background for button
+        borderRadius: 30,
+        paddingVertical: 15,
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: '#fff', // White text for button
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 });
 
